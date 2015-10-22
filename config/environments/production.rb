@@ -1,5 +1,3 @@
-require 'heroku_dyno_metadata'
-
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -57,7 +55,7 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
   # Namespace the cache by git commit hash of the release.
-  if release_commit = HerokuDynoMetadata.get('release.commit')
+  if release_commit = ENV["HEROKU_SLUG_COMMIT"]
     # truncate the hash since Memcache limits keys to 250-chars
     release_commit = release_commit[0..5]
   end

@@ -184,7 +184,6 @@ And finally, to create the "Cancel Order" button in Salesforce:
 ### Heroku app setup
 
 - `heroku config:set` for each of the environment variables
-- `heroku labs:enable runtime-dyno-metadata` (this supports release-scoped cache; see `HerokuDynoMetadata` in [config/environments/production.rb](config/environments/production.rb))
 - Once Heroku Connect is setup: `heroku rake fix:connect_setup` (this loads the Postgres triggers to sync data back from Salesforce)
 
 ### Amazon S3 setup
